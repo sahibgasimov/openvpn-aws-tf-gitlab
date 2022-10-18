@@ -1,6 +1,6 @@
 variable "ami" {
   description = "AMI to be used, default is Ubuntu 18.67 Bionic"
-  default     = "ami-090f10efc254eaf55"
+  default     = ""
 }
 
 variable "region" {
@@ -30,16 +30,16 @@ variable "instancename" {
 }
 
 variable "instance_id" {
-  default = "i-04edb4b9cd579fbe5"
+  default = ""
 }
 
 variable "keyname" {
   description = "SSH key name"
-  default     = "openvpn-1"
+  default     = ""
 }
 
 variable "sns" {
-  default = "arn:aws:sns:us-east-1:226673603208:Default_CloudWatch_Alarms_Topic_Gmail"
+  default = ""
 }
 
 variable "key_country" {
@@ -68,18 +68,18 @@ variable "key_ou" {
 
 variable "passwd" {
   description = "OpenVPN admin password"
-  default     = "Amgen2018"
+  default     = ""
   sensitive   = true
 }
 
 variable "domain" {
   description = "OpenVPN server TLD"
-  default     = "sahibgasimov.link"
+  default     = ""
 }
 
 variable "sslmail" {
   description = "E-Mail for LetsEncrypt"
-  default     = "sahib.gasimov2@gmail.com"
+  default     = ""
 }
 
 variable "owner" {
@@ -94,7 +94,7 @@ variable "subdomain" {
 
 variable "subnetid" {
   description = "Subnet for the VPN Instance"
-  default     = "subnet-08617d8d079cb7bc3"
+  default     = ""
 }
 
 variable "adminurl" {
@@ -107,13 +107,13 @@ variable "adminurl" {
 variable "aws_access_key" {
   type        = string
   description = "AWS access key"
-  default     = "AKIATJRWMWKEP2UBOLVM"
+  default     = ""
 }
 
 variable "aws_secret_key" {
   type        = string
   description = "AWS secret key"
-  default     = "12TmQcrTOLaXfk7n0/yTdYNLtU/pVM1fbRNQ+i6q"
+  default     = ""
 }
 
 variable "aws_region" {
@@ -125,13 +125,13 @@ variable "aws_region" {
 variable "aws_access_key_main" {
   type        = string
   description = "AWS access key"
-  default     = "AKIAWKDHFPYSZFDXT4OH"
+  default     = ""
 }
 
 variable "aws_secret_key_main" {
   type        = string
-  description = "AWS secret key"
-  default     = "Mj4htuW7ThZJ74V42xkrhACK/+h7FgEKlg5ZPSxh"
+  description = ""
+  default     = ""
 }
 
 variable "aws_region_main" {

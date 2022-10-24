@@ -1,6 +1,6 @@
 variable "ami" {
   description = "AMI to be used, default is Ubuntu 18.67 Bionic"
-  default     = ""
+  default     = "ami-090f10efc254eaf55"
 }
 
 variable "region" {
@@ -10,7 +10,7 @@ variable "region" {
 
 variable "vpc" {
   description = "AWS VPC"
-  default     = "vpc-08fb66c3c7ffa6eaa"
+  default     = ""
 }
 
 /* variable "profile" {
@@ -26,7 +26,7 @@ variable "instancetype" {
 
 variable "instancename" {
   description = "EC2 instance name"
-  default     = "openvpn"
+  default     = "Openvpn"
 }
 
 variable "instance_id" {
@@ -35,7 +35,7 @@ variable "instance_id" {
 
 variable "keyname" {
   description = "SSH key name"
-  default     = ""
+  default     = "openvpn-1"
 }
 
 variable "sns" {
@@ -59,7 +59,7 @@ variable "key_org" {
 }
 
 variable "key_email" {
-  default = "sahib.gasimov2@gmail.com"
+  default = ""
 }
 
 variable "key_ou" {
@@ -99,7 +99,7 @@ variable "subnetid" {
 
 variable "adminurl" {
   description = "OpenVPN Admin login"
-  default     = "sahib"
+  default     = ""
 }
 
 # Provider Variables
@@ -130,7 +130,7 @@ variable "aws_access_key_main" {
 
 variable "aws_secret_key_main" {
   type        = string
-  description = ""
+  description = "AWS secret key"
   default     = ""
 }
 

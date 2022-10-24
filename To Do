@@ -1,2 +1,6 @@
-1. create healthcheck alarm 
-2. automate eventbridge start stop
+1. enable sahib user and run script test.shell
+activate openvpn and sahib user 
+enable 10.0.0.0/24 subnet inside openvpn 
+
+2. create healthcheck alarm 
+3. automate eventbridge start stop

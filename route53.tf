@@ -15,18 +15,4 @@ resource "aws_route53_record" "www" {
 }
 
 # Route53 HealthCheck 
-/* 
-resource "aws_route53_health_check" "openvpn" {
-  failure_threshold = "5"
-  fqdn              = "vpn.sahibgasimov.link"
-  port              = 443
-  request_interval  = "30"
-  resource_path     = "/"
-  search_string     = "admin"
-  type              = "HTTPS_STR_MATCH"
 
-  tags = {
-    Name = "https://vpn.sahibgasimov.link/admin"
-    Name = "openvpn"
-  }
-} */

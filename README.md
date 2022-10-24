@@ -1,4 +1,4 @@
-
+![alt text](https://www.ventx.de/images/logo.png "Ventx Logo")
 # Terraform AWS OpenVPNServer
 ## Range of application
 * Deploys an **OpenVPN** and **Access Server** with Letsencrypt SSL Certificate on EC2
@@ -91,6 +91,6 @@ Password: ( set your password with `${var.passwd}`
 
 
 
-Alternatively, you can find the password and URL information in the file /usr/local/openvpn_as/init.log.
+Alternatively, you can find the password and URL information in the file /usr/local/openvpn_as/init.log
 
 https://gmusumeci.medium.com/how-to-create-route-53-records-from-aws-cross-accounts-with-terraform-ef242528d606 | How to Create Route 53 Records from AWS Cross-Accounts with Terraform

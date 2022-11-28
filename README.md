@@ -1,3 +1,4 @@
+![Image](https://blog.labouardy.com/images/openvpn_aws.png)
 # Terraform AWS OpenVPNServer
 ## Range of application
 * Deploys an **OpenVPN** and **Access Server** with Letsencrypt SSL Certificate on EC2

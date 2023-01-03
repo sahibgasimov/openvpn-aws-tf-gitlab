@@ -1,4 +1,4 @@
-![alt text](https://www.ventx.de/images/logo.png "Ventx Logo")
+![alt text](https://www.blog.labouardy.com/images/openvpn_aws.png "openvpn_aws.png")
 # Terraform AWS OpenVPNServer
 ## Range of application
 * Deploys an **OpenVPN** and **Access Server** with Letsencrypt SSL Certificate on EC2

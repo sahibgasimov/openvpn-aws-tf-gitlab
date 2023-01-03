@@ -39,6 +39,8 @@ Username: `openvpn`
 
 Password: ( set your password with `${var.passwd}`
 
+*Alternatively, userdata script allows another user to get terminal access with the password(default password is "password") and find the console admin openvpn username password and URL information in the file /usr/local/openvpn_as/init.log
+
 
 ## Links
 

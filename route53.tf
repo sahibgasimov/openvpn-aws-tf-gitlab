@@ -5,7 +5,7 @@ data "aws_route53_zone" "hostedzone" {
   private_zone = false
 }
 # Create Route 53 A Record for the Load Balancer in the Main Zone
-resource "aws_route53_record" "www" {
+resource "aws_route53_record" "pan" {
   provider = aws.main
   zone_id  = data.aws_route53_zone.hostedzone.id
   name     = "${var.subdomain}.${data.aws_route53_zone.hostedzone.name}"
@@ -13,6 +13,3 @@ resource "aws_route53_record" "www" {
   records  = ["${aws_eip.myeip.public_ip}"]
   ttl      = "300"
 }
-
-# Route53 HealthCheck 
-

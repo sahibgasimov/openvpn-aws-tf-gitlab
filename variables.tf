@@ -1,6 +1,6 @@
 variable "ami" {
   description = "AMI to be used, default is Ubuntu 18.67 Bionic"
-  default     = "ami-090f10efc254eaf55"
+  default     = "ami-0574da719dca65348"
 }
 
 variable "region" {
@@ -10,14 +10,9 @@ variable "region" {
 
 variable "vpc" {
   description = "AWS VPC"
-  default     = ""
+  default     = "vpc-078c570d11b3fbf7b"
 }
 
-/* variable "profile" {
-  description = "AWS Profile"
-  default     = "default"
-
-} */
 
 variable "instancetype" {
   description = "EC2 instance type"
@@ -35,11 +30,7 @@ variable "instance_id" {
 
 variable "keyname" {
   description = "SSH key name"
-  default     = "openvpn-1"
-}
-
-variable "sns" {
-  default = ""
+  default     = "araderoo"
 }
 
 variable "key_country" {
@@ -59,7 +50,7 @@ variable "key_org" {
 }
 
 variable "key_email" {
-  default = ""
+  default = "araderoo@yahoo.com"
 }
 
 variable "key_ou" {
@@ -68,18 +59,18 @@ variable "key_ou" {
 
 variable "passwd" {
   description = "OpenVPN admin password"
-  default     = ""
+  default     = "Amgen2018"
   sensitive   = true
 }
 
 variable "domain" {
   description = "OpenVPN server TLD"
-  default     = ""
+  default     = "sahibgasimov.link"
 }
 
 variable "sslmail" {
   description = "E-Mail for LetsEncrypt"
-  default     = ""
+  default     = "araderoo@yahoo.com"
 }
 
 variable "owner" {
@@ -89,17 +80,17 @@ variable "owner" {
 
 variable "subdomain" {
   description = "Subdomain"
-  default     = "vpn"
+  default     = "pan"
 }
 
 variable "subnetid" {
   description = "Subnet for the VPN Instance"
-  default     = ""
+  default     = "subnet-04f9ccb10411841ae"
 }
 
 variable "adminurl" {
   description = "OpenVPN Admin login"
-  default     = ""
+  default     = "sahib"
 }
 
 # Provider Variables
@@ -107,13 +98,13 @@ variable "adminurl" {
 variable "aws_access_key" {
   type        = string
   description = "AWS access key"
-  default     = ""
+  default     = "AKIAUTVYRMFDHGO4AB7E"
 }
 
 variable "aws_secret_key" {
   type        = string
   description = "AWS secret key"
-  default     = ""
+  default     = "Ncyw8xxGsd1PQEomINpOln0jsgKu9j6Gj+rBwdqv"
 }
 
 variable "aws_region" {
@@ -125,13 +116,13 @@ variable "aws_region" {
 variable "aws_access_key_main" {
   type        = string
   description = "AWS access key"
-  default     = ""
+  default     = "AKIAWKDHFPYSZFDXT4OH"
 }
 
 variable "aws_secret_key_main" {
   type        = string
   description = "AWS secret key"
-  default     = ""
+  default     = "Mj4htuW7ThZJ74V42xkrhACK/+h7FgEKlg5ZPSxh"
 }
 
 variable "aws_region_main" {

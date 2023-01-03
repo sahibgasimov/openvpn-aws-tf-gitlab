@@ -1,35 +1,35 @@
 // Instance Name
 output "instancename" {
-  value = aws_instance.openvpn.arn
+  value = module.ec2-instance.id
 }
 
 /* // Instance Pupblic IPv4
 output "publicip" {
-  value = aws_instance.openvpn.public_ip
+  value = module.ec2-instance.public_ip
 } */
 
 // Userdata for openvpn Setup
-output "userdata" {
-  value = aws_instance.openvpn.user_data
-}
+/* output "userdata" {
+  value = module.ec2-instance.user_data
+} */
 
 // Instance Private IPv4
 output "privateip" {
-  value = aws_instance.openvpn.private_ip
+  value = module.ec2-instance.private_ip
 }
 
 // Instance Type
-output "instancetype" {
-  value = aws_instance.openvpn.instance_type
-}
+/* output "instancetype" {
+  value = module.ec2-instance.instance_type
+} */
 
 // Instance SSH Keyname
-output "keyname" {
-  value = aws_instance.openvpn.key_name
-}
+/* output "keyname" {
+  value = module.ec2-instance.key_name
+} */
 
 output "adminurl" {
-  value       = "https://${aws_route53_record.www.fqdn}/admin"
+  value       = "https://${aws_route53_record.pan.fqdn}/admin"
   description = "Admin Access URL for the openvpn"
 }
 
@@ -49,4 +49,13 @@ output "public_ip" {
 output "public_dns" {
   description = "Public DNS associated with the Elastic IP address"
   value       = aws_eip.myeip.public_dns
+}
+
+
+/* output "security_group_id" {
+  value = aws_security_group.security_group.id
+} */
+
+output "instance_id" {
+  value = [module.ec2-instance.id]
 }

@@ -1,7 +1,7 @@
 ![alt text](https://www.blog.labouardy.com/images/openvpn_aws.png "openvpn_aws.png")
 # Terraform AWS OpenVPNServer
 ## Range of application
-* Deploys an **OpenVPN** and **Access Server** with Letsencrypt SSL Certificate on EC2
+* Deploys an **OpenVPN** and **Access Server** with Letsencrypt SSL Certificate on EC2 Ubuntu 22.04
 * LetsEncrypt hook to put certificate into OpenVPN-AS config and restart openvpnas service
 
 

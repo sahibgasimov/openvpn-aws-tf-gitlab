@@ -10,7 +10,7 @@ module "ec2-instance" {
   /* vpc_security_group_ids = ["${aws_security_group.vpnsecuritygroup.id}"] */
   vpc_security_group_ids = [module.security_group.security_group_id]
   subnet_id              = var.subnetid
-  iam_instance_profile   = aws_iam_role.ec2_ssm_role.name
+  iam_instance_profile   = aws_iam_instance_profile.openvpn-iam-profile.name
   enable_volume_tags     = true  
   tags = {
     Owner = "${var.owner}"

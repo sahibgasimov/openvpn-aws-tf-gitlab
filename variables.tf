@@ -10,7 +10,7 @@ variable "region" {
 
 variable "vpc" {
   description = "AWS VPC"
-  default     = "vpc-078c570d11b3fbf7b"
+  default     = ""
 }
 
 
@@ -21,7 +21,7 @@ variable "instancetype" {
 
 variable "instancename" {
   description = "EC2 instance name"
-  default     = "Openvpn"
+  default     = ""
 }
 
 variable "instance_id" {
@@ -30,27 +30,27 @@ variable "instance_id" {
 
 variable "keyname" {
   description = "SSH key name"
-  default     = "araderoo"
+  default     = ""
 }
 
 variable "key_country" {
-  default = "US"
+  default = ""
 }
 
 variable "key_province" {
-  default = "IL"
+  default = ""
 }
 
 variable "key_city" {
-  default = "Chicago"
+  default = ""
 }
 
 variable "key_org" {
-  default = "SG"
+  default = ""
 }
 
 variable "key_email" {
-  default = "araderoo@yahoo.com"
+  default = ""
 }
 
 variable "key_ou" {
@@ -59,7 +59,7 @@ variable "key_ou" {
 
 variable "passwd" {
   description = "OpenVPN admin password"
-  default     = "Amgen2018"
+  default     = ""
   sensitive   = true
 }
 
@@ -85,7 +85,7 @@ variable "subdomain" {
 
 variable "subnetid" {
   description = "Subnet for the VPN Instance"
-  default     = "subnet-04f9ccb10411841ae"
+  default     = ""
 }
 
 variable "adminurl" {
@@ -98,13 +98,13 @@ variable "adminurl" {
 variable "aws_access_key" {
   type        = string
   description = "AWS access key"
-  default     = "AKIAUTVYRMFDHGO4AB7E"
+  default     = ""
 }
 
 variable "aws_secret_key" {
   type        = string
   description = "AWS secret key"
-  default     = "Ncyw8xxGsd1PQEomINpOln0jsgKu9j6Gj+rBwdqv"
+  default     = ""
 }
 
 variable "aws_region" {
@@ -116,13 +116,13 @@ variable "aws_region" {
 variable "aws_access_key_main" {
   type        = string
   description = "AWS access key"
-  default     = "AKIAWKDHFPYSZFDXT4OH"
+  default     = ""
 }
 
 variable "aws_secret_key_main" {
   type        = string
   description = "AWS secret key"
-  default     = "Mj4htuW7ThZJ74V42xkrhACK/+h7FgEKlg5ZPSxh"
+  default     = ""
 }
 
 variable "aws_region_main" {

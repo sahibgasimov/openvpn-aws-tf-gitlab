@@ -3,6 +3,7 @@
 ## Range of application
 * Deploys an **OpenVPN** and **Access Server** with Letsencrypt SSL Certificate on EC2 Ubuntu 22.04
 * LetsEncrypt hook to put certificate into OpenVPN-AS config and restart openvpnas service
+* The script deletes files every night named /var/log/openvpnas.log.15 and higher (up to .1000).
 
 
 

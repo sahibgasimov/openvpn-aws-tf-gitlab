@@ -32,15 +32,16 @@ You can change this in `userdata.sh` befor creating the instance but you also ca
 
  ```
 ## Usage
-If everything went well :)  you can access your OpenVPN Access server via your browser.
+If everything went well, you can access the server via SSH using public ip or SSM to your OpenVPN Access server via  browser.
+The initial admin password of the openvpn will be stored in /home/ubuntu/passwd.txt
 
 Check your specified Admin URL in the outputs of this terraform module
 
 Username: `openvpn`
 
-Password: ( set your password with `${var.passwd}`
+Password: `cat /home/ubuntu/passwdt.txt`
 
-*Alternatively, userdata script allows another user to get terminal access with the password(default password is "password") and find the console admin openvpn username password and URL information in the file /usr/local/openvpn_as/init.log
+*Alternatively, userdata script allows another user named admin to get terminal access with the password(default password is "password") and find the console admin openvpn username password and URL information in the file /usr/local/openvpn_as/init.log
 
 
 ## Links
@@ -64,7 +65,6 @@ Password: ( set your password with `${var.passwd}`
 | key\_province | OpenVPN CA Province Name | string | n/a | yes |
 | keyname | SSH Access Key | string | n/a | yes |
 | owner | AWS Tag for Owner | string | n/a | yes |
-| passwd | OpenVPN User Password for AdminUser:openvpn | string | n/a | yes |
 | profile | Aws Profile to use | string | n/a | yes |
 | region | Region to use | string | n/a | yes |
 | sslmail | LetsEncrypt Contact Email | string | n/a | yes |

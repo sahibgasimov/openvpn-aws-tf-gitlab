@@ -6,15 +6,15 @@ module "security_group" {
   description = "vpn"
   vpc_id      = data.aws_vpc.selected.id
   egress_with_cidr_blocks = [
-        {
-      from_port   = 0
-      to_port     = 0
-      protocol    = "-1"
-      cidr_blocks = "0.0.0.0/0"
-    ipv6_cidr_blocks = "::/0"
+    {
+      from_port        = 0
+      to_port          = 0
+      protocol         = "-1"
+      cidr_blocks      = "0.0.0.0/0"
+      ipv6_cidr_blocks = "::/0"
     },
   ]
-  ingress_with_cidr_blocks = [ 
+  ingress_with_cidr_blocks = [
     {
       from_port   = 22
       to_port     = 22
@@ -22,13 +22,7 @@ module "security_group" {
       description = "User-service ports"
       cidr_blocks = "0.0.0.0/0"
     },
-    {
-      from_port   = 80
-      to_port     = 80
-      protocol    = "tcp"
-      description = "User-service ports"
-      cidr_blocks = "0.0.0.0/0"
-      }, {
+     {
       from_port   = 443
       to_port     = 443
       protocol    = "tcp"
@@ -48,16 +42,10 @@ module "security_group" {
       cidr_blocks = "0.0.0.0/0"
 
     },
-    {
-      rule        = "postgresql-tcp"
-      cidr_blocks = "0.0.0.0/0"
-    }
+
   ]
 
   tags = {
     Name = "${var.instancename}"
   }
-
-
 }
-

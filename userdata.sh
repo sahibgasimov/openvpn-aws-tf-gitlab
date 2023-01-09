@@ -149,7 +149,7 @@ sudo -i
 sed 's/PasswordAuthentication no/PasswordAuthentication yes/' -i /etc/ssh/sshd_config
 systemctl restart sshd
 service sshd restart
-adduser --quiet --disabled-password --shell /bin/bash --home /home/sahib --gecos "User" admin
+adduser --quiet --disabled-password --shell /bin/bash --home /home/admin --gecos "User" admin
 usermod -aG sudo,admin admin
 #add user admin password (password name is password)
 echo "admin:password" | chpasswd

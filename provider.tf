@@ -6,7 +6,7 @@ provider "aws" {
   secret_key = var.aws_secret_key
   region     = var.aws_region
 }
-# Main AWS Provider
+# If you are using domain on different account you can use aws alias I called it Main AWS Provider
 provider "aws" {
   alias      = "main"
   access_key = var.aws_access_key_main

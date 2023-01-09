@@ -16,7 +16,7 @@ apt-get update
 apt-get upgrade -q -y | tee -a
 apt-get install ca-certificates chrony wget net-tools awscli -y
 
-echo "=======| 2. Install certbot, openvpn-as and mysql-client"
+echo "=======| 2. Install certbot, openvpn-as"
 
 apt -y install ca-certificates wget chrony net-tools gnupg
 wget https://as-repository.openvpn.net/as-repo-public.asc -qO /etc/apt/trusted.gpg.d/as-repository.asc
@@ -149,11 +149,11 @@ sudo -i
 sed 's/PasswordAuthentication no/PasswordAuthentication yes/' -i /etc/ssh/sshd_config
 systemctl restart sshd
 service sshd restart
-adduser --quiet --disabled-password --shell /bin/bash --home /home/sahib --gecos "User" sahib
-usermod -aG sudo,admin sahib
-#add user sahib password (password name is password)
-echo "sahib:password" | chpasswd
-echo "username:sahib" >> /home/ubuntu/passwd.txt
+adduser --quiet --disabled-password --shell /bin/bash --home /home/sahib --gecos "User" admin
+usermod -aG sudo,admin admin
+#add user admin password (password name is password)
+echo "admin:password" | chpasswd
+echo "username:openvpn" >> /home/ubuntu/passwd.txt
 cat /usr/local/openvpn_as/init.log|grep -i 'account with' |awk '{print $9}' >> /home/ubuntu/passwd.txt
 
 EOF
@@ -162,35 +162,5 @@ sh /tmp/pass.sh
 
 #The script deletes files every night named /var/log/openvpnas.log.15 and higher (up to .1000).
 crontab -l | { cat; echo "0 4 * * * root  /bin/rm /var/log/openvpnas.log.{15..1000} >/dev/null 2>&1"; } | crontab -
-
-# #openvpn backup 
-# sudo mkdir -p /opt/scripts/
-# cat << 'EOF' > /opt/scripts/openvpn_backup.sh
-# #!/bin/bash
-# sudo -i
-# #!/bin/bash
-# #This script will take backup of vpn configuration files at 08:00 on day-of-month 1 and upload to s3 bucket, its configured in crontab -e
-# #See more details how to backup and restore openvpn backup https://openvpn.net/vpn-server-resources/migrating-an-access-server-installation/
-
-# which apt > /dev/null 2>&1 && apt -y install sqlite3
-# which yum > /dev/null 2>&1 && yum -y install sqlite
-# cd /usr/local/openvpn_as/etc/db
-# [ -e config.db ]&&sqlite3 config.db .dump>../../config.db.bak
-# [ -e certs.db ]&&sqlite3 certs.db .dump>../../certs.db.bak
-# [ -e userprop.db ]&&sqlite3 userprop.db .dump>../../userprop.db.bak
-# [ -e log.db ]&&sqlite3 log.db .dump>../../log.db.bak
-# [ -e config_local.db ]&&sqlite3 config_local.db .dump>../../config_local.db.bak
-# [ -e cluster.db ]&&sqlite3 cluster.db .dump>../../cluster.db.bak
-# [ -e clusterdb.db ]&&sqlite3 clusterdb.db .dump>../../clusterdb.db.bak
-# [ -e notification.db ]&&sqlite3 notification.db .dump>../../notification.db.bak 
-# sudo cp ../as.conf ../../as.conf.bak
-# sudo zip  openvpn_backup_$(date +%Y-%m-%d_%H-%M-%S).zip ../../*.bak
-# sudo chmod +x openvpn*
-# aws s3 sync /usr/local/openvpn_as/etc/db/ s3://araderoo-lige-lige/openvpn-backup/
-# rm -rf openvpn_backup*
-# aws s3 rm s3://araderoo-lige-lige/openvpn-backup/ --recursive --exclude "*" --include "*.db"
-# EOF
-# chmod +x /opt/scripts/openvpn_backup.sh
-# crontab -l | { cat; echo "0 8 1 * * /opt/scripts/openvpn_backup.sh"; } | crontab -
 
 echo "==============END OF Installation============="

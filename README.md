@@ -5,12 +5,11 @@
 * LetsEncrypt hook to put certificate into OpenVPN-AS config and restart openvpnas service
 * The script deletes files every night named /var/log/openvpnas.log.15 and higher (up to .1000).
 
-## Basic Settings
+## VPN Settings
 Customize your OpenVPNServer with these [Inputs](#Inputs)
 
 ## Logoutput on the EC2 Instance
-Setup logfile `/tmp/setup.log`
-
+openvpn logfile `/var/log/openvpn.log`
 LetsEncrypt auto renew logfile `/var/log/letsencrypt-renew.log`
 
 ## Advanced Settings
@@ -89,10 +88,6 @@ Password: `cat /home/ubuntu/passwdt.txt`
 | userdata | Userdata Hash |
 | vpc\_id | VPC ID |
 | vpc\_name | VPC Name |
-
-
-
-https://gmusumeci.medium.com/how-to-create-route-53-records-from-aws-cross-accounts-with-terraform-ef242528d606 | How to Create Route 53 Records from AWS Cross-Accounts with Terraform
 
 ## Gitlab 
 

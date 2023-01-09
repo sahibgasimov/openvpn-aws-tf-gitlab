@@ -12,7 +12,7 @@ Customize your OpenVPNServer with these [Inputs](#Inputs)
 openvpn logfile `/var/log/openvpn.log`
 LetsEncrypt auto renew logfile `/var/log/letsencrypt-renew.log`
 
-## Advanced Settings
+## Settings setup
 For VPN Routing and advanced settings use the **Access Server command line interface tools**
 
 To use `./sacli` navigate to `/usr/local/openvpn_as/scripts/ `

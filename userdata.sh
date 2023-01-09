@@ -135,3 +135,33 @@ EOF
 echo "=======| 23. Restart OpenVPN AS"
 systemctl restart openvpnas
 echo "==============END OF Installation============="
+
+# #openvpn backup 
+# sudo mkdir -p /opt/scripts/
+# cat << 'EOF' > /opt/scripts/openvpn_backup.sh
+# #!/bin/bash
+# sudo -i
+# #!/bin/bash
+# #This script will take backup of vpn configuration files at 08:00 on day-of-month 1 and upload to s3 bucket, its configured in crontab -e
+# #See more details how to backup and restore openvpn backup https://openvpn.net/vpn-server-resources/migrating-an-access-server-installation/
+
+# which apt > /dev/null 2>&1 && apt -y install sqlite3
+# which yum > /dev/null 2>&1 && yum -y install sqlite
+# cd /usr/local/openvpn_as/etc/db
+# [ -e config.db ]&&sqlite3 config.db .dump>../../config.db.bak
+# [ -e certs.db ]&&sqlite3 certs.db .dump>../../certs.db.bak
+# [ -e userprop.db ]&&sqlite3 userprop.db .dump>../../userprop.db.bak
+# [ -e log.db ]&&sqlite3 log.db .dump>../../log.db.bak
+# [ -e config_local.db ]&&sqlite3 config_local.db .dump>../../config_local.db.bak
+# [ -e cluster.db ]&&sqlite3 cluster.db .dump>../../cluster.db.bak
+# [ -e clusterdb.db ]&&sqlite3 clusterdb.db .dump>../../clusterdb.db.bak
+# [ -e notification.db ]&&sqlite3 notification.db .dump>../../notification.db.bak 
+# sudo cp ../as.conf ../../as.conf.bak
+# sudo zip  openvpn_backup_$(date +%Y-%m-%d_%H-%M-%S).zip ../../*.bak
+# sudo chmod +x openvpn*
+# aws s3 sync /usr/local/openvpn_as/etc/db/ s3://araderoo-lige-lige/openvpn-backup/
+# rm -rf openvpn_backup*
+# aws s3 rm s3://araderoo-lige-lige/openvpn-backup/ --recursive --exclude "*" --include "*.db"
+# EOF
+# chmod +x /opt/scripts/openvpn_backup.sh
+# crontab -l | { cat; echo "0 8 1 * * /opt/scripts/openvpn_backup.sh"; } | crontab -

@@ -41,7 +41,7 @@ Username: `openvpn`
 
 Password: `cat /home/ubuntu/passwdt.txt`
 
-*Alternatively, userdata script allows another user named admin to get terminal access with the password(default password is "password") and find the console admin openvpn username password and URL information in the file /usr/local/openvpn_as/init.log
+*Alternatively, userdata script allows another user named `admin` to get terminal access with the password(default password is "password") and find the console admin openvpn username password and URL information in the file /usr/local/openvpn_as/init.log
 
 
 ## Links

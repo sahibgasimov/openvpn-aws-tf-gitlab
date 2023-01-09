@@ -51,6 +51,7 @@ Password: `cat /home/ubuntu/passwdt.txt`
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | ami | AWS AMI to use | string | ami-0ff39345bd62c82a5 | no |
+| adminurl | openvpn admin URL | string | m/a | yes |
 | domain | Domain Name | string | n/a | yes |
 | instancename | Name of the Instance | string | n/a | yes |
 | instancetype | AWS Instance Type | string | n/a | yes |
@@ -61,6 +62,7 @@ Password: `cat /home/ubuntu/passwdt.txt`
 | key\_ou | OpenVPN Organisation Unit Name | string | n/a | yes |
 | key\_province | OpenVPN CA Province Name | string | n/a | yes |
 | keyname | SSH Access Key | string | n/a | yes |
+| subdomain | Subdomain name | string | n/a | yes |
 | owner | AWS Tag for Owner | string | n/a | yes |
 | profile | Aws Profile to use | string | n/a | yes |
 | region | Region to use | string | n/a | yes |

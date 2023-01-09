@@ -1,11 +1,9 @@
 ![alt text](https://cdn-images-1.medium.com/max/800/1*gNoZk3L-XsF3YA8y2YRoEA.jpeg "1*gNoZk3L-XsF3YA8y2YRoEA.jpeg")
 # Terraform AWS OpenVPNServer
-## Range of application
+## Application deployment
 * Deploys an **OpenVPN** and **Access Server** with Letsencrypt SSL Certificate on EC2 Ubuntu 22.04
 * LetsEncrypt hook to put certificate into OpenVPN-AS config and restart openvpnas service
 * The script deletes files every night named /var/log/openvpnas.log.15 and higher (up to .1000).
-
-
 
 ## Basic Settings
 Customize your OpenVPNServer with these [Inputs](#Inputs)
@@ -97,6 +95,8 @@ Password: `cat /home/ubuntu/passwdt.txt`
 https://gmusumeci.medium.com/how-to-create-route-53-records-from-aws-cross-accounts-with-terraform-ef242528d606 | How to Create Route 53 Records from AWS Cross-Accounts with Terraform
 
 ## Gitlab 
+
+Create gitlab-ci.yaml file 
 
 ```
 image:

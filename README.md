@@ -1,4 +1,4 @@
-![alt text](https://www.blog.labouardy.com/images/openvpn_aws.png "openvpn_aws.png")
+![alt text](https://cdn-images-1.medium.com/max/800/1*4JTsiIGWo3JhNv8z_qL7nw.jpeg "1*4JTsiIGWo3JhNv8z_qL7nw.jpeg")
 # Terraform AWS OpenVPNServer
 ## Range of application
 * Deploys an **OpenVPN** and **Access Server** with Letsencrypt SSL Certificate on EC2 Ubuntu 22.04

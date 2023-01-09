@@ -95,3 +95,77 @@ Password: `cat /home/ubuntu/passwdt.txt`
 
 
 https://gmusumeci.medium.com/how-to-create-route-53-records-from-aws-cross-accounts-with-terraform-ef242528d606 | How to Create Route 53 Records from AWS Cross-Accounts with Terraform
+
+## Gitlab 
+
+```
+image:
+  name: hashicorp/terraform:light
+  entrypoint:
+    - '/usr/bin/env'
+
+before_script:
+  - rm -rf .terraform
+  - terraform --version
+  - mkdir -p ./terraform/project
+  - terraform init
+
+stages:
+  - validate
+  - plan
+  - apply
+  - destroy
+
+validate:
+  stage: validate
+  script: 
+    - terraform validate
+
+plan:
+  stage: plan
+  script:
+    - set
+    - echo $AWS_SECRET_ACCESS_KEY
+    - echo $AWS_ACCESS_KEY_ID
+    - mkdir -p ./terraform/project
+    - chmod 777 terraform/project
+    - cd terraform/project
+    - ls
+    - terraform init
+    - terraform plan
+  dependencies:
+    - validate
+
+apply:
+  stage: apply
+  script:
+    - set
+    - echo $AWS_SECRET_ACCESS_KEY
+    - echo $AWS_ACCESS_KEY_ID
+    - mkdir -p ./terraform/project
+    - chmod 777 terraform/project
+    - cd terraform/project
+    - ls
+    - terraform init
+    - terraform apply --auto-approve
+  dependencies:
+      - plan
+  when: manual
+
+destroy:
+  stage: destroy
+  script:
+    - set
+    - echo $AWS_SECRET_ACCESS_KEY
+    - echo $AWS_ACCESS_KEY_ID
+    - mkdir -p ./terraform/project
+    - chmod 777 terraform/project
+    - cd terraform/project
+    - ls
+    - terraform init
+    - terraform destroy --auto-approve
+  dependencies:
+    - apply
+  when: manual
+  
+```

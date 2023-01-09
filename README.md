@@ -5,6 +5,8 @@
 * LetsEncrypt hook to put certificate into OpenVPN-AS config and restart openvpnas service
 * The script deletes files every night named /var/log/openvpnas.log.15 and higher (up to .1000).
 
+*Note: The original code of userdata script and instructions for data_tempalates below, I've got from https://github.com/ventx/Terraform-AWS-OpenVPNServer, I would like to thank repo owner Ventx for this great bootstrap script. I've slightly modified the script to fully meet my needs.
+
 ## VPN Settings
 Customize your OpenVPNServer with these [Inputs](#Inputs)
 

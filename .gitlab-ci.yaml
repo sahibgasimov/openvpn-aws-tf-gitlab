@@ -6,7 +6,7 @@ image:
 before_script:
   - rm -rf .terraform
   - terraform --version
-  - mkdir -p ./rk-terraform-test/function
+  - mkdir -p ./terraform/function
   - terraform init
 
 stages:
@@ -26,9 +26,9 @@ plan:
     - set
     - echo $AWS_SECRET_ACCESS_KEY
     - echo $AWS_ACCESS_KEY_ID
-    - mkdir -p ./rk-terraform-test/function
-    - chmod 777 rk-terraform-test/function
-    - cd rk-terraform-test/function
+    - mkdir -p ./terraform/function
+    - chmod 777 terraform/function
+    - cd terraform/function
     - ls
     - terraform init
     - terraform plan
@@ -41,15 +41,15 @@ apply:
     - set
     - echo $AWS_SECRET_ACCESS_KEY
     - echo $AWS_ACCESS_KEY_ID
-    - mkdir -p ./rk-terraform-test/function
-    - chmod 777 rk-terraform-test/function
-    - cd rk-terraform-test/function
+    - mkdir -p ./terraform/function
+    - chmod 777 terraform/function
+    - cd terraform/function
     - ls
     - terraform init
     - terraform apply --auto-approve
   dependencies:
       - plan
-  #when: manual
+  when: manual
 
 destroy:
   stage: destroy
@@ -57,12 +57,13 @@ destroy:
     - set
     - echo $AWS_SECRET_ACCESS_KEY
     - echo $AWS_ACCESS_KEY_ID
-    - mkdir -p ./rk-terraform-test/function
-    - chmod 777 rk-terraform-test/function
-    - cd rk-terraform-test/function
+    - mkdir -p ./terraform/function
+    - chmod 777 terraform/function
+    - cd terraform/function
     - ls
     - terraform init
     - terraform destroy --auto-approve
   dependencies:
     - apply
   when: manual
+  

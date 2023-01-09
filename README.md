@@ -52,7 +52,7 @@ Password: ( set your password with `${var.passwd}`
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| ami | AWS AMI to use | string | ami-0574da719dca65348 | no |
+| ami | AWS AMI to use | string | ami-0ff39345bd62c82a5 | no |
 | domain | Domain Name | string | n/a | yes |
 | instancename | Name of the Instance | string | n/a | yes |
 | instancetype | AWS Instance Type | string | n/a | yes |

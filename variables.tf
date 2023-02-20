@@ -1,6 +1,6 @@
 variable "ami" {
-  description = "AMI to be used, default is Ubuntu 18.67 Bionic"
-  default     = "ami-0574da719dca65348"
+  description = "AMI to be used, default is Ubuntu 22 Bionic"
+  default     = "ami-0ff39345bd62c82a5"
 }
 
 variable "region" {

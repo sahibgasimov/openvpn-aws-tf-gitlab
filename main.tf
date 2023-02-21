@@ -26,7 +26,7 @@ module "ec2-instance" {
 
 resource "aws_key_pair" "openvpn" {
   key_name   = "openvpn"
-  public_key = "ssh-rsa BBBAAB3NzaC1yc2EAAAADAQABAAABgQCvjU0julcjCD5DwZImUH7lmqK16SMscWtovS3WQiG+6ob733i2heXXcvo4dweZ9cp74N++sudD17Qisrrt2HrlJKCRxr4lvsTnH2leO7pl8QlLSMTXCEjY5StSun66N8B2ocha9TsdHKk2aJCow6Gu+EtjYOqUiUh+mAVylJfa+eZyLeXBtVIRVgOzhaV6bokb+V7aHVMHvs7U1KzQZgOp9l0rXcYfJLQ5VdVVRmN6jRaOsd6mdqyiHlX9TGvco6/dcNFR0YszCB3iredljkxXvNfME400I3WKEmUjn9hEhmed8Wq4BLMHOPBks6WbfBMweteLHdmSSxmHM0x6r4ccZStp334NQvBWQ8yB1OkAo61Y+bNGLSmRFK0jbVuVsM+B2rUJR2U+DREsiIYy4IQZSM989rRTaIiQ++ODO9sdWVwyOKqM2w7qbRK64KegF9cQ10Oxl4riwxTOOsdsd37ixIw7UjEe0XqhXbg36CKi70OfnERSRU= gisdov@DESKTOP-979"
+  public_key = var.public_key
 }
 
 data "template_file" "userdata" {

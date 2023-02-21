@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = ""
+    bucket = var.bucket_name
     key    = "openvpn/terraform.tfstate"
-    region = "us-east-2"
+    region = var.region
   }
 }

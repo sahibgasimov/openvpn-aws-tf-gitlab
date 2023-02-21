@@ -9,7 +9,7 @@ resource "aws_route53_record" "pan" {
   # provider = aws.main
   zone_id  = data.aws_route53_zone.hostedzone.id
   name     = "${var.subdomain}.${data.aws_route53_zone.hostedzone.name}"
-  type     = "A"
+  type     = var.dns_record
   records  = ["${aws_eip.myeip.public_ip}"]
-  ttl      = "300"
+  ttl      = var.ttl
 }

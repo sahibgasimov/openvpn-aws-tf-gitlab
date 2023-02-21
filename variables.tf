@@ -3,6 +3,16 @@ variable "ami" {
   default     = "ami-0ff39345bd62c82a5"
 }
 
+variable "dns_record" {
+description = "dns record for openvpn server"
+default = "A"
+}
+
+variable "ttl" {
+description = "ttl for dns"
+default = "300"
+}
+
 variable "region" {
   description = "AWS Region"
   default     = "us-east-1"
@@ -13,12 +23,18 @@ variable "vpc" {
   default     = ""
 }
 
+variable "public_key" {
+description = "public key needed for creating openvpn ssh key" 
+default = ""
 
 variable "instancetype" {
   description = "EC2 instance type"
   default     = "t2.micro"
 }
 
+variable "bucket_name" {
+description  = "name of bucket"
+}
 variable "instancename" {
   description = "EC2 instance name"
   default     = ""

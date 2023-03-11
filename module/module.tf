@@ -3,7 +3,7 @@ module "openvpn_sever" {
   region       = "us-east-1"
   ami          = "ami-0557a15b87f6559cf"
   adminurl     = "sahib"
-  public_key   = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCvjU0julcjCD5DwZImUH7lmqK16SMscWtovS3WQiG+6ob733i24vDAZMKP8vUdz4UKheXXcvo4dweZ9cp74N++sudD17Qisrrt2HrlJKCRxr4lvsTnH2leO7pl8QlLSMTXCEjY5StSun66N8B2ocha9TsdHKk2aJCow6Gu+EtjYOqUiUh+mAVylJfa+eZyLeXBtVIRVgOzhaV6bokb+V7aHVMHvs7U1KzQZgOp9l0rXcYfJLQ5VdVVRmN6jRaOsd6mdqyiHlX9TGvco6/dcNFR0YszCB3iredljkxXvNfME400I3WKEmUjn9h6f8Wq4BLMHOPBks6WbfBMweteLHdmSSxmHM0x6r4ccZStp334NQvBWQ8yB1OkAo61Y+bNGLSmRFK0jbVuVsM+B2rUJR2U+DREsiIYy4IQZSM989rRTaIiQ++ODM1tWVwyOKqM2w7qbRK64KegF9cQ10Oxl4riwxTOOnbuIX37ixIw7UjEe0XqhXbg36CKi70OfnERSRU= sgasimov@DESKTOP-97VNMH9"
+  public_key   = "ssh-rsa++++EtjYOqUiUh+mAVylJfa++V7aHVMHvs7U1KzQZgOp9l0rXcYfJLQ5VdVVRmN6jRaOsd6mdqyiHlX9TGvco6/dcNFR0YszCB3iredljkxXvNfME400I3WKEmUjn9h6f8Wq4BLMHOPBks6WbfBMweteLHdmSSxmHM0x6r4ccZStp334NQvBWQ8yB1OkAo61Y+bNGLSmRFK0jbVuVsM+B2rUJR2U+DREsiIYy4IQZSM989rRTaIiQ++ODM1tWVwyOKqM2w7qbRK64KegF9cQ10Oxl4riwxTOOnbuIX37ixIw7UjEe0XqhXbg36CKi70OfnERSRU= sgasimov@DESKTOP-97VNMH9"
   instancetype = "t2.micro"
   instancename = "openvpn"
   passwd       = "password" #admin user password that can ssh
